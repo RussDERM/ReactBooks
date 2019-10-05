@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const routes = require("./routes");
 const logger = require("morgan");
 
+const db = require("./models");
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -27,7 +29,29 @@ app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", {
+const bookSeed = {
+  authors: ["George Orwell"],
+  title: "1984",
+  description: "This book predicts today's society",
+  image:
+    "https://books.google.com/books/content?id=yxv1LK5gyV4C&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE70TjF98hbwKPUm8xsTJJOR4iqTAYrunvacZ2DQKX5BvxmIL1I1omqT31uCmnejzNuotrEv7lcKL_Q7Lxu7OIIQWLV1HvIhj6GPVLlhT8l4LqcOGUXgazjysNPIR7EJ-B9OQVBb3",
+  link:
+    "https://books.google.com/books?id=yxv1LK5gyV4C&dq=1984&hl=en&sa=X&ved=2ahUKEwj_kp6mwIPlAhUkIDQIHewBAyIQ6AEwAHoECAAQAg"
+};
+
+db.Book.remove({})
+  .then(() => db.Book.collection.insertOne(bookSeed))
+  .then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+// *DB Connection
+mongoose.connect("mongodb://localhost/googlebooks", {
   useNewUrlParser: true
 });
 

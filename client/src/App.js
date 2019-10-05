@@ -1,21 +1,36 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+import logo from "./logo.svg";
+
+// * React Imports
+import NavbarComp from "./components/Navbar/Navbar";
+import Fourohfour from "./pages/Fourohfour";
+import Container from "react-bootstrap/Container";
+import Home from "./pages/Home";
+import Saved from "./pages/Saved";
+
+// *Styling
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+function App() {
+  return (
+    // <span>Hola!</span>
+    <>
+      <Container>
+        <NavbarComp />
+        <Router>
+          <div>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/saved" component={Saved} />
+            </Switch>
+          </div>
+        </Router>
+      </Container>
+    </>
+  );
 }
 
 export default App;
