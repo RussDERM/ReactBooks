@@ -1,6 +1,11 @@
 import React, { Component } from "react";
+// * Components
 import Container from "react-bootstrap/Container";
+import SearchBox from "../components/SearchBox/SearchBox";
+import ResultsBox from "../components/ResultsBox/ResultsBox";
+// * Styling
 import "./pageStyle.css";
+// * Utility
 import api from "../utility/api";
 
 class Home extends React.Component {
@@ -25,6 +30,7 @@ class Home extends React.Component {
         } else {
           // *Stick the response in an array
           let results = res.data.items;
+          console.log(results);
           //* map() array
           results = results.map(result => {
             //*Generate objects from results
@@ -62,11 +68,20 @@ class Home extends React.Component {
   };
   //* END Book Save Function
 
+  // * BEGIN PAGE RENDERING
+
   render() {
     return (
       <>
         <Container className="box">
-          <div className="searchBox">GoogleBooks Search</div>
+          <div className="searchContainer">
+            <div>Google Books Search</div>
+            <SearchBox
+              handleFormSubmit={this.handleFormSubmit}
+              handleInputChange={this.handleInputChange}
+            />
+          </div>
+          <ResultsBox books={this.state.books} />
         </Container>
       </>
     );

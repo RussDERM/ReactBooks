@@ -3,7 +3,9 @@ import axios from "axios";
 export default {
   // ? Search Function
   getGoogleSearchBooks: function(query) {
-    return axios.get("https://www.googleapis.com/books/v1/volumes?q=" + query);
+    const queryURL = "https://www.googleapis.com/books/v1/volumes?q=" + query;
+    console.log(queryURL);
+    return axios.get(queryURL);
   },
 
   //*Return saved books
