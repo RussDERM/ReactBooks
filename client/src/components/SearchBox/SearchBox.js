@@ -4,7 +4,7 @@ import "./SearchBox.css";
 const SearchBox = props => {
   return (
     <div className="form-group">
-      <i class="fas fa-4x fa-book-open"></i>
+      <i className="fas fa-4x fa-book-open"></i>
       <br></br>
       <label>Search for a Book!</label>
       <input

@@ -1,11 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import logo from "./logo.svg";
-
 // * React Imports
-import NavbarComp from "./components/Navbar/Navbar";
-import Fourohfour from "./pages/Fourohfour";
+// import NavbarComp from "./components/Navbar/Navbar";
+// import Fourohfour from "./pages/Fourohfour";
 import Container from "react-bootstrap/Container";
 import Home from "./pages/Home";
 import Saved from "./pages/Saved";
@@ -19,7 +17,7 @@ function App() {
     // <span>Hola!</span>
     <>
       <Container>
-        <NavbarComp />
+        {/* <NavbarComp /> */}
         <Router>
           <div>
             <Switch>

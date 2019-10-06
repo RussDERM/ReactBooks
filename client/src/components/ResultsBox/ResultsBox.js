@@ -4,13 +4,12 @@ import "./ResultsBox.css";
 // *Componennt Import
 import CardColumns from "react-bootstrap/CardColumns";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
+import ListGroup from "react-bootstrap/ListGroup";
+import ListGroupItem from "react-bootstrap/ListGroupItem";
 
 const ResultsBox = props => {
   // trying CS6..
-  return props.books.length === 0 ? (
-    <div className="resultsBox">No Results Found.</div>
-  ) : (
+  return (
     <div className="resultsBox">
       <CardColumns>
         {props.books.map(book => {
@@ -23,6 +22,18 @@ const ResultsBox = props => {
                 </Card.Title>
                 <Card.Text>{book.description}</Card.Text>
               </Card.Body>
+              <ListGroup className="list-group-flush">
+                <ListGroupItem className="lgiContainer">
+                  <div className="lgi">
+                    View
+                    <i class="view far fa-eye"> </i>
+                  </div>
+                  <div className="lgi">
+                    Save
+                    <i class="save far fa-heart"> </i>
+                  </div>
+                </ListGroupItem>
+              </ListGroup>
             </Card>
           );
         })}
