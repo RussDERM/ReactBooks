@@ -1,29 +1,27 @@
-# Create React Express App
+# ReactBooks
 
-## About This Boilerplate
+ReactBooks is a simple app made using the MERN stack.
+It queries the Google Books API, and can a list of books to a server. Very Cool.
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+See it deployed [here](https://stormy-castle-58403.herokuapp.com)
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+# Why?
 
-## Starting the app locally
+This app was made for the University of Washington Coding Bootcamp, by Russell Dermody. [LinkedIn](https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile&lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_top_card%3BitRwrm0%2BTB6SrrVD%2FW2rYA%3D%3D) - [Github](https://github.com/RussDERM)
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
+## Installation
 
-```
+Use NPM, and run
+
+```bash
 npm install
 ```
 
-This should install node modules within the server and the client folder.
+to install the various packages required.
 
-After both installations complete, run the following command in your terminal:
+## Technologies
 
-```
-npm start
-```
-
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
-
-## Deployment (Heroku)
-
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+- [ M ] ongoDB
+- [ E ] xpress
+- [ R ] eact
+- [ N ] ode
