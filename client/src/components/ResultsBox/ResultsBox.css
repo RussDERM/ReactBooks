@@ -1,0 +1,14 @@
+.resultsBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.book {
+  font-family: "Montserrat", sans-serif;
+  margin: 10px;
+}
+
+.title {
+  font-weight: bolder;
+}
