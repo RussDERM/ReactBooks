@@ -81,7 +81,9 @@ class Home extends React.Component {
               handleInputChange={this.handleInputChange}
             />
           </div>
-          <ResultsBox books={this.state.books} />
+        </Container>
+        <Container>
+          <ResultsBox className="resultsBox" books={this.state.books} />
         </Container>
       </>
     );
