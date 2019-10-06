@@ -4,25 +4,30 @@
   justify-content: center;
   height: 30vw;
   font-family: "Montserrat", sans-serif;
+  text-align: center;
+  color: black;
 }
 
 .searchContainer {
-  color: white;
-
   background-color: white;
-  border: 5px solid white;
+  border: 2px solid lightskyblue;
   border-radius: 20px;
   box-shadow: 0px 5px 5px lightgray;
   width: 600px;
   max-width: 600px;
-  height: 200px;
-  max-height: 200px;
+  height: 220px;
+  max-height: 220px;
   margin-top: auto;
   margin-bottom: auto;
+  padding: 15px;
 }
 
 .resultsBox {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.fas {
+  color: lightskyblue;
 }

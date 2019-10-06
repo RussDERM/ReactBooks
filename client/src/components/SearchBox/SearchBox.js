@@ -4,6 +4,8 @@ import "./SearchBox.css";
 const SearchBox = props => {
   return (
     <div className="form-group">
+      <i class="fas fa-4x fa-book-open"></i>
+      <br></br>
       <label>Search for a Book!</label>
       <input
         className="form-control"
@@ -13,7 +15,11 @@ const SearchBox = props => {
         placeholder="Book Title"
         onChange={props.handleInputChange}
       ></input>
-      <button type="submit" className="submit" onClick={props.handleFormSubmit}>
+      <button
+        type="submit"
+        className="btn submit"
+        onClick={props.handleFormSubmit}
+      >
         Submit
       </button>
     </div>

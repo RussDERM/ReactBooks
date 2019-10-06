@@ -75,8 +75,8 @@ class Home extends React.Component {
       <>
         <Container className="box">
           <div className="searchContainer">
-            <div>Google Books Search</div>
             <SearchBox
+              className="searchBox"
               handleFormSubmit={this.handleFormSubmit}
               handleInputChange={this.handleInputChange}
             />
