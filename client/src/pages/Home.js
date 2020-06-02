@@ -18,8 +18,10 @@ class Home extends React.Component {
   };
 
   //* BEGIN Search Function
+
   handleFormSubmit = event => {
     event.preventDefault();
+
 
     // *On Click..
     api
@@ -68,6 +70,7 @@ class Home extends React.Component {
   };
   //* END Book Save Function
 
+
   // * BEGIN PAGE RENDERING
 
   render() {
@@ -83,7 +86,10 @@ class Home extends React.Component {
           </div>
         </Container>
         <Container>
-          <ResultsBox className="resultsBox" books={this.state.books} />
+          <ResultsBox className="resultsBox" 
+          books={this.state.books}
+          onClick={this.handleViewClick}        
+          />
         </Container>
       </>
     );

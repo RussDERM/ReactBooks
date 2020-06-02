@@ -8,6 +8,8 @@ import ListGroup from "react-bootstrap/ListGroup";
 import ListGroupItem from "react-bootstrap/ListGroupItem";
 
 const ResultsBox = props => {
+  console.log(props);
+  
   // trying CS6..
   return (
     <div className="resultsBox">
@@ -24,10 +26,10 @@ const ResultsBox = props => {
               </Card.Body>
               <ListGroup className="list-group-flush">
                 <ListGroupItem className="lgiContainer">
-                  <div className="lgi">
+                  <a className="lgi" type='view' href={book.link} target='_blank'>
                     View
-                    <i class="view far fa-eye"> </i>
-                  </div>
+                    <i className="view far fa-eye"> </i>
+                  </a>
                   <div className="lgi">
                     Save
                     <i class="save far fa-heart"> </i>
