@@ -1,0 +1,37 @@
+.resultsBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.book {
+  font-family: "Montserrat", sans-serif;
+  margin: 10px;
+}
+
+.title {
+  font-weight: bolder;
+}
+
+.view {
+  align-content: flex-end;
+}
+
+.lgiContainer {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.lgi {
+  padding: 0px 10px 0px 10px;
+  display: inline-flex;
+}
+
+.lgi:hover {
+  color: lightskyblue;
+}
+
+.lgi:active {
+  color: goldenrod;
+}
