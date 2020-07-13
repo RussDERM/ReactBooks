@@ -9,12 +9,7 @@ import CardColumns from "react-bootstrap/CardColumns";
 // import ListGroup from "react-bootstrap/ListGroup";
 // import ListGroupItem from "react-bootstrap/ListGroupItem";
 
-// * Assign key values to book object..
-// function bookJSON(result) {
-//   return {
-//     author
-//   }
-// }
+
 
 const ResultsBox = props => {
   

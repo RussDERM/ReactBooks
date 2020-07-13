@@ -6,7 +6,7 @@ import ResultsBox from "../components/ResultsBox/ResultsBox";
 // * Styling
 import "./pageStyle.css";
 // * Utility
-import api from "../utility/api";
+import API from "../utility/API";
 
 class Home extends React.Component {
   //* Home State will hold all query information
@@ -24,7 +24,7 @@ class Home extends React.Component {
 
 
     // *On Click..
-    api
+    API
       .getGoogleSearchBooks(this.state.search)
       .then(res => {
         if (res.data.items === "error") {
@@ -32,7 +32,6 @@ class Home extends React.Component {
         } else {
           // *Stick the response in an array
           let results = res.data.items;
-          console.log(results);
           //* map() array
           results = results.map(result => {
             //*Generate objects from results
@@ -55,19 +54,20 @@ class Home extends React.Component {
   };
   //* END Search Function
 
+
+
   //* Book Save Function
-  handleSavedButton = (itemJSON) => {
-    // let savedBooks = this.state.books.filter(
-    //   book => book.id === event.target.id
-    // );
-    // savedBooks = savedBooks[0];
-    console.log(this)
-    // // api
-    // //   .saveBook(savedBooks)
-    // //   .then(this.setState({ message: alert("Your selection has been saved") }))
-    // //   .catch(err => console.log(err));
+  handleSavedButton = (bookJSON) => {
+   if (bookJSON.title && bookJSON.author) {
+     API.saveBook(bookJSON)
+     .then(res => console.log(res.data))
+     .catch(err => console.log(err));
+   }
+   console.log(bookJSON)
   };
   //* END Book Save Function
+
+
 
 
   // * BEGIN PAGE RENDERING

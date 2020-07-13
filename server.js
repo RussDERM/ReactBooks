@@ -7,7 +7,7 @@ const logger = require("morgan");
 const db = require("./models");
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 // *Express Settings
 app.use(logger("dev"));
@@ -30,7 +30,7 @@ app.get("*", (req, res) => {
 });
 
 const bookSeed = {
-  authors: ["George Orwell"],
+  authors: ["George Cornwell"],
   title: "1984",
   description: "This book predicts today's society",
   image:

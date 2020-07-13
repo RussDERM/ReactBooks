@@ -6,10 +6,20 @@ import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import ListGroupItem from "react-bootstrap/ListGroupItem";
 
+// * Assign key values to book object..
 
 const BookCard = props => {
-    const { image, title, author, link, description, handleSavedButton} = props;
-
+  const { image, title, author, link, description, handleSavedButton} = props;
+  
+  // 
+  function bookJSON(book) {
+    return {
+      title: title,
+      author: author[0],
+      description: description,
+      link: link,
+    }
+  }
 
     return (
  <Card className="book">
@@ -27,9 +37,9 @@ const BookCard = props => {
                     <i className="view far fa-eye"> </i>
                   </a>
                   <div className="lgi">
-                    <button onClick={() => handleSavedButton()}>
+                    <button onClick={() => handleSavedButton(bookJSON())}>
                     Save
-                    <i class="save far fa-heart"> </i>
+                    <i className="save far fa-heart"> </i>
                     </button>
                   </div>
                 </ListGroupItem>

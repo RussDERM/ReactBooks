@@ -4,7 +4,6 @@ export default {
   // ? Search Function
   getGoogleSearchBooks: function(query) {
     const queryURL = "https://www.googleapis.com/books/v1/volumes?q=" + query;
-    console.log(queryURL);
     return axios.get(queryURL);
   },
 
@@ -17,8 +16,8 @@ export default {
     return axios.get("/api/books/" + id);
   },
   //* Save to DB
-  saveBook: function(savedBooks) {
-    return axios.post("/api/books", savedBooks);
+  saveBook: function(saveBook) {
+    return axios.post("/api/books", saveBook);
   },
   //*Delete from DB
   deleteBook: function(id) {
