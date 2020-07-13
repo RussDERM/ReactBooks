@@ -9,11 +9,15 @@ import CardColumns from "react-bootstrap/CardColumns";
 // import ListGroup from "react-bootstrap/ListGroup";
 // import ListGroupItem from "react-bootstrap/ListGroupItem";
 
+// * Assign key values to book object..
+// function bookJSON(result) {
+//   return {
+//     author
+//   }
+// }
+
 const ResultsBox = props => {
   
-
-  
-  // trying CS6..
   return (
     <div className="resultsBox">
       <CardColumns>
@@ -22,9 +26,12 @@ const ResultsBox = props => {
             <BookCard 
             key={book.link}
             title={book.title}
+            author={book.author}
             description={book.description}
             link={book.link}
             image={book.image}
+            handleSavedButton={props.handleSavedButton}
+            
             />
           );
         })}

@@ -1,14 +1,14 @@
 import React from "react";
 
+
 // *Bootstrap Import
-import CardColumns from "react-bootstrap/CardColumns";
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import ListGroupItem from "react-bootstrap/ListGroupItem";
 
 
 const BookCard = props => {
-    const { image, title, link, description} = props;
+    const { image, title, author, link, description, handleSavedButton} = props;
 
 
     return (
@@ -16,7 +16,7 @@ const BookCard = props => {
               <Card.Img variant="top" src={image} />
               <Card.Body>
                 <Card.Title>
-                  <span className="title">{title}</span>
+                  <span className="title">{`${title} - ${author}`}</span>
                 </Card.Title>
                 <Card.Text>{description}</Card.Text>
               </Card.Body>
@@ -27,8 +27,10 @@ const BookCard = props => {
                     <i className="view far fa-eye"> </i>
                   </a>
                   <div className="lgi">
+                    <button onClick={() => handleSavedButton()}>
                     Save
                     <i class="save far fa-heart"> </i>
+                    </button>
                   </div>
                 </ListGroupItem>
               </ListGroup>

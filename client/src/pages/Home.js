@@ -56,17 +56,16 @@ class Home extends React.Component {
   //* END Search Function
 
   //* Book Save Function
-  handleSavedButton = event => {
-    event.preventDefault();
-    console.log(this.state.books);
-    let savedBooks = this.state.books.filter(
-      book => book.id === event.target.id
-    );
-    savedBooks = savedBooks[0];
-    api
-      .saveBook(savedBooks)
-      .then(this.setState({ message: alert("Your selection has been saved") }))
-      .catch(err => console.log(err));
+  handleSavedButton = (itemJSON) => {
+    // let savedBooks = this.state.books.filter(
+    //   book => book.id === event.target.id
+    // );
+    // savedBooks = savedBooks[0];
+    console.log(this)
+    // // api
+    // //   .saveBook(savedBooks)
+    // //   .then(this.setState({ message: alert("Your selection has been saved") }))
+    // //   .catch(err => console.log(err));
   };
   //* END Book Save Function
 
@@ -88,7 +87,7 @@ class Home extends React.Component {
         <Container>
           <ResultsBox className="resultsBox" 
           books={this.state.books}
-          onClick={this.handleViewClick}        
+          handleSavedButton={this.handleSavedButton}
           />
         </Container>
       </>
